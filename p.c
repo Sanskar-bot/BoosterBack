@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+void clearScreen()
+{
+    system("clear"); // For macOS
+}
 int needu(int upper, int lower) 
 {
    int randm ;
@@ -11,9 +15,28 @@ int needu(int upper, int lower)
 int main()
 {
     srand(time(0));
-int a=0,p1=0,p2=0;
+  int a=0,p1=0,p2=0;
+  char ar[30][40];
+  int r,pl1=0;
+  int i,j;
+  int indi=1;
+  int ip1=2,jp1=2,ip2=2,jp2=2;
+    for(i=0;i<=30;i++)
+    {
+
+      for(j=0;j<=40;j++)
+      {
+        if(i%3==0)
+         ar[i][j]='_';
+        else
+         ar[i][j]=' ';
+        if(j%4==0)
+         ar[i][j]='|';
+      }
+    }
 while (p1<100&&p2<100)
 {
+    int y=0;
     if(a%2==0)
     {
         int totalrn=0,rn,x=1;
@@ -27,23 +50,55 @@ while (p1<100&&p2<100)
          }
          if(rn==6)
          {
-            printf("For player 1 :you got a six so here you go another chance to rool dice\n ");
+            printf("For player 1 :you got a six so here you go another chance to rool dice\n");
                 x=1;
          }
          totalrn=totalrn+rn;
-         
+  
          
         }
-        printf("For player 1 :so here comes your final number you can move \n%d\n",totalrn);
-         p1=p1+totalrn;
-    }
+        p1=p1+totalrn;
+         if(p1/10!=0)
+         {
+            ip1=p1/10;
+            ip1=((ip1-1)*3)+5;
+         } 
+         jp1=p1%10;
+         jp1=((jp1-1)*4)+2;
+         ar[ip1][jp1]='r';
 
+         for(i=0;i<=30;i++)
+         {
+
+         for(j=0;j<=40;j++)
+         {
+          printf("%c", ar[i][j]);
+         }
+
+          printf("\n");
+         }
+         ar[ip1][jp1]=' ';
+
+         a=a+1;
+         
+         
+        printf("For player 1 :so here comes your final number you can move \n%d\n",totalrn);
+ 
+         printf("for next turn enter 1");
+         scanf("%d",&y);
+         
+         if(y==1)
+           clearScreen();
+    }
+    
    if(a%2!=0)
     {
+         int y=0;
         int totalrn=0,rn,x=1;
         printf("For player 2 :your current position is %d\n",p2);
         while (x==1)
         {
+           
          rn=needu(6,1);
          if(rn<6)
          {
@@ -51,16 +106,46 @@ while (p1<100&&p2<100)
          }
          if(rn==6)
          {
-            printf("For player 2 :you got a six so here you go another chance to rool dice\n ");
+            printf("For player 2 :you got a six so here you go another chance to rool dice\n");
                 x=1;
          }
          totalrn=totalrn+rn;
          
          
         }
+        p2=p2+totalrn;
+         if(p2/10!=0)
+         {
+            ip2=p2/10;
+            ip2=((ip2-1)*3)+5;
+         } 
+         jp2=p2%10;
+         jp2=((jp2-1)*4)+2;
+         ar[ip2][jp2]='s';
+
+         for(i=0;i<=30;i++)
+         {
+
+         for(j=0;j<=40;j++)
+         {
+          printf("%c", ar[i][j]);
+         }
+
+          printf("\n");
+         }
+
+         ar[ip2][jp2]=' ';
+         a=a+1;
+         
+         
         printf("For player 2 :so here comes your final number you can move \n%d\n",totalrn);
-         p2=p2+totalrn;
+         printf("for next turn enter 2");
+         scanf("%d",&y);
+         if(y==1)
+         {
+             clearScreen();
+         }
     }
-    a+=1;
-}
+    }
+ 
 }
