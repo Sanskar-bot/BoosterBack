@@ -17,7 +17,7 @@ while (p1<100&&p2<100)
     if(a%2==0)
     {
         int totalrn=0,rn,x=1;
-        printf("your current position is %d\n",p1);
+        printf(" For player 1 :your current position is %d\n",p1);
         while (x==1)
         {
          rn=needu(6,1);
@@ -27,16 +27,40 @@ while (p1<100&&p2<100)
          }
          if(rn==6)
          {
-            printf("you got a six so here you go another chance to rool dice\n ");
+            printf("For player 1 :you got a six so here you go another chance to rool dice\n ");
                 x=1;
          }
          totalrn=totalrn+rn;
          
          
         }
-        printf("so here comes your final number you can move \n%d\n",totalrn);
+        printf("For player 1 :so here comes your final number you can move \n%d\n",totalrn);
          p1=p1+totalrn;
     }
-   p2=10;
+
+   if(a%2!=0)
+    {
+        int totalrn=0,rn,x=1;
+        printf("For player 2 :your current position is %d\n",p2);
+        while (x==1)
+        {
+         rn=needu(6,1);
+         if(rn<6)
+         {
+            x=0;
+         }
+         if(rn==6)
+         {
+            printf("For player 2 :you got a six so here you go another chance to rool dice\n ");
+                x=1;
+         }
+         totalrn=totalrn+rn;
+         
+         
+        }
+        printf("For player 2 :so here comes your final number you can move \n%d\n",totalrn);
+         p2=p2+totalrn;
+    }
+    a+=1;
 }
 }
