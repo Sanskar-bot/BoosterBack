@@ -15,7 +15,7 @@ int needu(int upper, int lower)
 int main()
 {
     srand(time(0));
-  int a=0,p1=0,p2=0;
+  int a=0,p1=1,p2=1;
   char ar[30][40];
   int r,pl1=0;
   int i,j;
@@ -54,18 +54,18 @@ while (p1<100&&p2<100)
                 x=1;
          }
          totalrn=totalrn+rn;
-  
-         
         }
-        
-         if(p1/10!=0)
+        ip1=p1/10;
+
+         if(p1%10==0)
          {
-            ip1=p1/10;
-            if(ip1%10==0)
-            ip1=((ip1-2)*3)+5;
-            else
-            ip1=((ip1-1)*3)+5;
+            ip1=((ip1-1)*3)+2;
          } 
+         else 
+         {
+            ip1=(ip1*3)+2;
+         }
+         printf("%d",ip1);
          //to locate position of j 
          if(p1%10==0)
          {
@@ -137,14 +137,15 @@ while (p1<100&&p2<100)
          
         }
         
-         if(p2/10!=0)
+         ip2=p2/10;
+         if(p2%10==0)
          {
-            ip2=p2/10;
-            if(ip2%10==0)
-            ip2=((ip2-2)*3)+5;
-            else
-            ip2=((ip2-1)*3)+5;
+            ip2=((ip2-1)*3)+2;
          } 
+         else 
+         {
+            ip2=((ip2)*3)+2;
+         }
         if(p2%10==0)
          {
              if(p2==0)
