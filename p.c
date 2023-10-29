@@ -57,15 +57,36 @@ while (p1<100&&p2<100)
   
          
         }
-        p1=p1+totalrn;
+        
          if(p1/10!=0)
          {
             ip1=p1/10;
+            if(ip1%10==0)
+            ip1=((ip1-2)*3)+5;
+            else
             ip1=((ip1-1)*3)+5;
          } 
+         //to locate position of j 
+         if(p1%10==0)
+         {
+            if(p1==0)
+            {
+             jp1=2;
+            }
+            else
+            {
+             jp1=38;
+            }
+      
+         }
+        else
+        {
          jp1=p1%10;
          jp1=((jp1-1)*4)+2;
+        }
          ar[ip1][jp1]='r';
+         ar[ip2][jp2]='s';
+         printf("\ni cor : %d , j cor %d\n",ip1,jp1);
 
          for(i=0;i<=30;i++)
          {
@@ -78,8 +99,10 @@ while (p1<100&&p2<100)
           printf("\n");
          }
          ar[ip1][jp1]=' ';
+          ar[ip2][jp2]=' ';
 
          a=a+1;
+         p1=p1+totalrn;
          
          
         printf("For player 1 :so here comes your final number you can move \n%d\n",totalrn);
@@ -113,15 +136,34 @@ while (p1<100&&p2<100)
          
          
         }
-        p2=p2+totalrn;
+        
          if(p2/10!=0)
          {
             ip2=p2/10;
+            if(ip2%10==0)
+            ip2=((ip2-2)*3)+5;
+            else
             ip2=((ip2-1)*3)+5;
          } 
+        if(p2%10==0)
+         {
+             if(p2==0)
+            {
+             jp2=2;
+            }
+            else
+            {
+             jp2=38;
+            }
+         }
+        else
+        {
          jp2=p2%10;
          jp2=((jp2-1)*4)+2;
+        }
          ar[ip2][jp2]='s';
+         ar[ip1][jp1]='r';
+         printf("\ni cor : %d , j cor %d\n",ip2,jp2);
 
          for(i=0;i<=30;i++)
          {
@@ -135,8 +177,9 @@ while (p1<100&&p2<100)
          }
 
          ar[ip2][jp2]=' ';
+         ar[ip1][jp1]=' ';
          a=a+1;
-         
+         p2=p2+totalrn;
          
         printf("For player 2 :so here comes your final number you can move \n%d\n",totalrn);
          printf("for next turn enter 2");
@@ -147,5 +190,4 @@ while (p1<100&&p2<100)
          }
     }
     }
- 
 }

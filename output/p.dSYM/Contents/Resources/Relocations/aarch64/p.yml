@@ -2,8 +2,8 @@
 triple:          'arm64-apple-darwin'
 binary-path:     '/Users/sanskarphougat/Documents/boostback/game/BoosterBack/output/p'
 relocations:
-  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _clearScreen, symObjAddr: 0x0, symBinAddr: 0x1000035E4, symSize: 0x1C }
-  - { offsetInCU: 0x41, offset: 0x41, size: 0x8, addend: 0x0, symName: _clearScreen, symObjAddr: 0x0, symBinAddr: 0x1000035E4, symSize: 0x1C }
-  - { offsetInCU: 0x56, offset: 0x56, size: 0x8, addend: 0x0, symName: _needu, symObjAddr: 0x1C, symBinAddr: 0x100003600, symSize: 0x50 }
-  - { offsetInCU: 0x9A, offset: 0x9A, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x6C, symBinAddr: 0x100003650, symSize: 0x758 }
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _clearScreen, symObjAddr: 0x0, symBinAddr: 0x1000033D4, symSize: 0x1C }
+  - { offsetInCU: 0x41, offset: 0x41, size: 0x8, addend: 0x0, symName: _clearScreen, symObjAddr: 0x0, symBinAddr: 0x1000033D4, symSize: 0x1C }
+  - { offsetInCU: 0x56, offset: 0x56, size: 0x8, addend: 0x0, symName: _needu, symObjAddr: 0x1C, symBinAddr: 0x1000033F0, symSize: 0x50 }
+  - { offsetInCU: 0x9A, offset: 0x9A, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x6C, symBinAddr: 0x100003440, symSize: 0x950 }
 ...
